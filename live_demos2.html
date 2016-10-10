@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <meta name="description" content=""/>
+  <meta name="keywords" content=""/>
+  <title>REAL-WORLD TYPE SYSTEM</title>
+  <link href="http://fonts.googleapis.com/css?family=Jura" rel="stylesheet" type="text/css"/>
+
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.slidertron-0.3.1.js"></script>
+  <script type="text/javascript" src="js/jquery.treeonic-0.2.js"></script>
+  <script type="text/javascript" src="js/jquery.poptrox-0.1.js"></script>
+  <script type="text/javascript" src="js/init.js"></script>
+  <script type="text/javascript" src="lib/dojo/dojo/dojo.js" data-dojo-config="'parseOnLoad':true,'async':true,'packages':[{'name':'gridx','location':'../gridx'},{'name':'clipart','location':'../../clipart'},{'name':'maqettaSamples','location':'../../../samples'},{'name':'maqetta','location':'../../maqetta'},{'name':'shapes','location':'../../shapes'},{'name':'zazl','location':'../../zazl'},{'name':'widgets','location':'../../custom'}]"></script>
+  <script type="text/javascript">
+require([
+  "dijit/dijit",
+  "dojo/parser",
+  "maqetta/space",
+  "maqetta/AppStates",
+  "dijit/form/SimpleTextarea",
+  "dijit/MenuBar",
+  "dijit/PopupMenuBarItem",
+  "dijit/MenuItem",
+  "dijit/Menu",
+  "dijit/layout/TabContainer",
+  "dijit/layout/ContentPane",
+  "dijit/layout/BorderContainer",
+  "dijit/form/ComboBox",
+  "dijit/form/DropDownButton",
+  "dijit/form/Select",
+  "dijit/TitlePane",
+  "dijit/layout/AccordionContainer",
+  "dijit/Toolbar",
+  "dijit/form/Button",
+  "dojo/dnd/Source", 
+   "dojo/domReady!"
+]);
+</script>
+<style>@import "themes/claro/document.css";@import "themes/claro/claro.css";@import "app.css";
+</style>
+</head>
+ <body data-maq-flow-layout="absolute" data-maq-comptype="sketchlofi" class="claro" data-maq-ws="collapse" id="myapp" data-maq-appstates="{}">
+
+
+       <div style="width: 900px; position: relative; height: 60px; left: 110px;">
+<h2>
+            Select a programming language to use the demo</h2>
+          <select data-dojo-type="dijit/form/Select" type="text" value="JAVA" intermediateChanges="false" iconClass="dijitNoIcon" emptyLabel="&amp;#160;" scrollOnFocus="true" autoWidth="true" style="left: 0px; position: relative; top: 0px; width: 150px; font-size: 12pt;">
+           <option value="Java" selected="true">
+             Java</option>
+           <option value="C">
+             C</option>
+           <option value="C++">
+             C++</option>
+           <option value="JAVAScript">
+             JAVAScript</option>
+         </select>
+       </div>
+       <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; position: relative; width: 900px; left: 100px; height: 800px;">
+         <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="bottom" splitter="true" maxSize="Infinity" doLayout="false" style="height:422px;">
+           <div data-dojo-type="dijit/layout/BorderContainer" design="headline" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; width: 100%; left: 0px; top: 0px; position: relative; height: 100%;">
+             <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="bottom" splitter="true" maxSize="Infinity" doLayout="false" style="height:187px;">
+               <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; position: absolute; z-index: 900; left: 0px; top: 0px; height: 100%; width: 100%;">
+                 <div data-dojo-type="dijit/layout/ContentPane" id="rwtRuleCreation" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false"></div>
+                 <div data-dojo-type="dijit/layout/ContentPane" id="rwtRuleList" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="top" splitter="true" maxSize="Infinity" doLayout="false" style="height:79px;">
+                   <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 12pt;">Real World Type Rules</b>
+                 </div>
+               </div>
+             </div>
+             <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false">
+               <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; position: absolute; z-index: 900; width: 100%; left: 0px; top: 0px; height: 100%;">
+                 <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeList" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="left" splitter="true" maxSize="Infinity" doLayout="false" style="width:259px;">
+                   <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 12pt;">Real World Types</b>
+                   <ol data-dojo-type="dojo.dnd.Source" id="real_world_type_list" class="container" style="position: relative; left: 0px; width: auto; height: auto;">
+                     <li class="dojoDndItem" onClick="SetPage('test')">
+                       
+                       
+                       Altitude</li>
+                     <li class="dojoDndItem">
+                       
+                       
+                       Longitude</li>
+                     <li class="dojoDndItem">
+                       
+                       
+                       Latitude</li>
+                   </ol>
+                 </div>
+                 <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeDetails" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false"></div>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false" style="border: none; height: 40%;">
+           <textarea type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; height: 100%; background-color: #fff7f7; width: 13px; left: 0px;" readonly="true"></textarea>
+           <textarea type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; top: 0px; height: 100%; width: 95%; background-color: white; left: -4px;"></textarea>
+         </div>
+       </div>
+     </body>
+
+     </html>
+  <div id="copyright" style="width: 1108px; height: 24px;">
+    Created by Jian Xiang in 2016</div>

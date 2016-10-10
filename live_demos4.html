@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  <meta name="description" content=""/>
+  <meta name="keywords" content=""/>
+  <title>REAL-WORLD TYPE SYSTEM</title>
+  <link href="http://fonts.googleapis.com/css?family=Jura" rel="stylesheet" type="text/css"/>
+
+  <script type="text/javascript" src="app.js"></script>
+  <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="js/jquery.slidertron-0.3.1.js"></script>
+  <script type="text/javascript" src="js/jquery.treeonic-0.2.js"></script>
+  <script type="text/javascript" src="js/jquery.poptrox-0.1.js"></script>
+  <script type="text/javascript" src="js/init.js"></script>
+  <script type="text/javascript" src="lib/dojo/dojo/dojo.js" data-dojo-config="'parseOnLoad':true,'async':true,'packages':[{'name':'gridx','location':'../gridx'},{'name':'clipart','location':'../../clipart'},{'name':'maqettaSamples','location':'../../../samples'},{'name':'maqetta','location':'../../maqetta'},{'name':'shapes','location':'../../shapes'},{'name':'zazl','location':'../../zazl'},{'name':'widgets','location':'../../custom'}]"></script>
+  <script type="text/javascript">
+require([
+  "dijit/dijit",
+  "dojo/parser",
+  "maqetta/space",
+  "maqetta/AppStates",
+  "dijit/form/SimpleTextarea",
+  "dijit/MenuBar",
+  "dijit/PopupMenuBarItem",
+  "dijit/MenuItem",
+  "dijit/Menu",
+  "dijit/layout/TabContainer",
+  "dijit/layout/ContentPane",
+  "dijit/layout/BorderContainer",
+  "dijit/form/ComboBox",
+  "dijit/form/DropDownButton",
+  "dijit/form/Select",
+  "dijit/TitlePane",
+  "dijit/layout/AccordionContainer",
+  "dijit/Toolbar",
+  "dijit/form/Button",
+  "dojo/dnd/Source",
+  "dojo/domReady",
+  "dijit/form/TextBox",
+  "dijit/form/NumberSpinner",
+  "dijit/form/ComboButton"
+]);
+</script>
+                    <script>
+							require(["dojo/dnd/Source", "dojo/parser", "dojo/domReady!", 'dojo/topic'], function(Source) {
+								var myDndSource = new Source("myDndSource");
+								myDndSource.on("MouseUp", function(source, nodes, copy, target) {
+									console.debug("here");
+									  var list = document.getElementById("myDndSource").getElementsByTagName("li");
+									  for (var k = list.length - 1; k >= 0; k--) {
+									    var item = list[k];
+									    item.parentNode.removeChild(item);
+									  }
+									  //operandTwoTB
+									  var list = document.getElementById("operandTwoTB").getElementsByTagName("li");
+									  for (var k = list.length - 1; k >= 0; k--) {
+									    var item = list[k];
+									    item.parentNode.removeChild(item);
+									  }
+								});
+								
+								dojo.connect(myDndSource, "DndDrop", function(e){
+									dojo.stopEvent(e);
+									console.debug("haha");
+								});
+								
+								myDndSource.on("DndDrop", function(source, nodes, copy, target) {
+									nodes.forEach(function(node) {
+									           console.log("Dropped '" + node.innerText + "' on source '" + source.node.id + "'");
+									 });
+									 var foo = new dojo.dnd.Manager();
+									 
+									arr = foo.event;
+								   for (var i = 0, len = arr.length; i <len; i++) 
+										dojo.stopEvent(arr[i]); 
+								   
+</script>								   
+								   
+<style>@import "themes/claro/document.css";@import "themes/claro/claro.css";@import "app.css";
+</style>
+
+ <body data-maq-flow-layout="absolute" data-maq-comptype="sketchlofi" class="claro" data-maq-ws="collapse" id="myapp" data-maq-appstates="{}">
+
+
+       <div style="width: 900px; position: relative; height: 60px; left: 110px;">
+<h2>
+            Select a programming language to use the demo</h2>
+          <select data-dojo-type="dijit/form/Select" type="text" value="JAVA" intermediateChanges="false" iconClass="dijitNoIcon" emptyLabel="&amp;#160;" scrollOnFocus="true" autoWidth="true" style="left: 0px; position: relative; top: 0px; width: 150px; font-size: 12pt;">
+           <option value="Java" selected="true">
+             Java</option>
+           <option value="C">
+             C</option>
+           <option value="C++">
+             C++</option>
+           <option value="JAVAScript">
+             JAVAScript</option>
+         </select>
+       </div>
+       <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; position: relative; width: 900px; left: 100px; height: 800px;">
+       <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="bottom" splitter="true" maxSize="Infinity" doLayout="false" style="border: none; border-radius: 0px; -moz-border-radius: 0px; margin: 0px; padding: 0; height: 422px;">
+          <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; position: absolute; z-index: 900; top: 0px; width: 100%; height: 100%; left: 0;">
+            <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="left" splitter="true" maxSize="Infinity" doLayout="false" style="width:435px;">
+             <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; width: 100%; height: 100%; position: relative; left: 0px; top: 0;">
+               <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeList" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" region="top" splitter="true" maxSize="Infinity" style="height: 176px;">
+               <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 12pt;">Real World Types</b>
+                   <ol data-dojo-type="dojo.dnd.Source" id="real_world_type_list" data-dojo-props="copyOnly:true,selfCopy:true" class="container" style="position: relative; left: 0px; width: auto; height: auto;">
+                     <li class="dojoDndItem" onClick="SetPage('test')" dndType="rwtype"> Altitude</li>
+                     <li class="dojoDndItem" dndType="rwtype">Longitude</li>
+                     <li class="dojoDndItem" dndType="rwtype">Latitude</li>
+                   </ol>
+               </div>
+               <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeDetail" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" region="center" splitter="false" maxSize="Infinity">
+               <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 10pt;">Real World Type Detail</b>
+               </div>
+             </div>
+           </div>
+            <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false">
+             <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; width: 100%; height: 100%; position: relative; left: 0px; top: 0;">
+               <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeRule" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="top" splitter="true" maxSize="Infinity" style="height: 173px;">
+               <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 12pt;">Real World Type List</b>
+               </div>
+               <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeRuleCreation" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity">
+               <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 10pt;">Real World Type Creation Template</b>
+               <div id="operandOne">
+               <input type="text" data-dojo-type="dijit/form/TextBox" style="position: absolute; z-index: 900; width: 128.109375px; left: 8px; top: 57px;">
+               <!--!----><!--		require(["dojo/dnd/Source", "dojo/parser", "dojo/domReady!"], function(Source--><!--			var myDndSource = new Source("operandOne--><!--			myDndSource.on("DndDrop", function(source, nodes, copy, target--><!--				// Do someth--><!--				console.debug("here--><!--	--><!--			--><!--		--><!------></input>
+               </div>
+
+               <div data-dojo-type="dojo/dnd/Target" Id="myDndSource" data-dojo-props="accept: [ 'rwtype' ]" class="container">
+               <input id="operandTwoTB" type="text" data-dojo-type="dijit/form/TextBox" style="position: absolute; z-index: 900; width: 132.109375px; left: 8px; top: 124px;">
+               </input>
+               </div>
+               <!--span data-dojo-type="dijit/form/ComboButton" intermediateChanges="false" label="Operator" iconClass="dijitNoIcon" dropDownPosition="below" style="position: absolute; z-index: 900; left: 91.90777500000002px; top: 82.98590000000002px--><!--n data-dojo-type="dijit/Menu" contextMenuForWindow="false" leftClickToOpen="false" tabIndex="--><!--n data-dojo-type="dijit/MenuItem" label="*" iconClass="dijitNoIcon"></sp--><!--n data-dojo-type="dijit/MenuItem" label="/" iconClass="dijitNoIcon"></sp--><!--n data-dojo-type="dijit/MenuItem" label="+" iconClass="dijitNoIcon"></sp--><!--n data-dojo-type="dijit/MenuItem" label="-" iconClass="dijitNoIcon"></sp--><!----><!--an--><input type="text" data-dojo-type="dijit/form/TextBox" style="position: absolute; z-index: 900; width: 128.109375px; left: 207px; top: 88.20159999999998px;"></input>
+             </div>
+             </div>
+           </div>
+          </div>
+        </div>
+         <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false" style="border: none; height: 40%;">
+           <div style="height: 100%; width: 100%; position: relative; z-index: 900;">
+          <textarea type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; height: 100%; background-color: #fff7f7; width: 13px; left: 0px;" readonly="true"></textarea>
+          <textarea type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; top: 0px; height: 100%; background-color: white; left: -4px; width: 96%;"></textarea>
+        </div>
+           </div>
+       </div>
+       <div id="pageCreation" style="height: 24px; width: 900px; position: absolute; z-index: 900; left: 110px; text-align: center;">
+         Created by Jian Xiang in 2016</div>
+
+  <div id="store">
+  <div class="catalogContainer">
+   <h2>Catalog</h2>
+   <ul data-dojo-type="dojo/dnd/Source" data-dojo-props="accept: [ 'inStock', 'outOfStock' ]" id="catalogNode" class="container">
+    <li class="dojoDndItem inStock" dndType="inStock">Wrist watch</li>
+    <li class="dojoDndItem inStock" dndType="inStock">Life jacket</li>
+    <li class="dojoDndItem inStock" dndType="inStock">Toy bulldozer</li>
+    <li class="dojoDndItem outOfStock" dndType="outOfStock">Vintage microphone</li>
+    <li class="dojoDndItem outOfStock" dndType="outOfStock">TIE fighter</li>
+    <li class="dojoDndItem inStock" dndType="inStock">Apples</li>
+    <li class="dojoDndItem inStock" dndType="inStock">Bananas</li>
+    <li class="dojoDndItem outOfStock" dndType="outOfStock">Tomatoes</li>
+    <li class="dojoDndItem inStock" dndType="inStock">Bread</li>
+   </ul>
+  </div>
+
+  <div class="cartContainer">
+   <h2>Cart</h2>
+      <ul data-dojo-type="dojo/dnd/Source" data-dojo-props="accept: [ 'inStock', 'outOfStock' ]" jsId="cartNode" class="container">
+  <li class="dojoDndItem inStock" dndType="inStock">Wrist watch</li>
+    <li class="dojoDndItem inStock" dndType="inStock">Life jacket</li>
+    <li class="dojoDndItem inStock" dndType="inStock">Toy bulldozer</li>
+    <li class="dojoDndItem outOfStock" dndType="outOfStock">Vintage microphone</li>
+    <li class="dojoDndItem outOfStock" dndType="outOfStock">TIE fighter</li>
+    <li class="dojoDndItem inStock" dndType="inStock">Apples</li>
+    <li class="dojoDndItem inStock" dndType="inStock">Bananas</li>
+    <li class="dojoDndItem outOfStock" dndType="outOfStock">Tomatoes</li>
+    <li class="dojoDndItem inStock" dndType="inStock">Bread</li>
+   </ul>
+  </div>
+  <div class="wishlistContainer">
+   <h2>Wishlist</h2>
+   <ol data-dojo-type="dojo/dnd/Source" data-dojo-props="accept: [ 'inStock', 'outOfStock' ]" id="wishlistNode" class="container">
+   </ol>
+  </div>
+ </div>
+
+
+     </body>
+
+     </head>
+
+</html>

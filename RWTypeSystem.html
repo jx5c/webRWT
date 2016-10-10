@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<title>Untitled</title>
+<script type="text/javascript" src="lib/dojo/dojo/dojo.js" data-dojo-config="'parseOnLoad':true,'async':true,'packages':[{'name':'gridx','location':'../gridx'},{'name':'clipart','location':'../../clipart'},{'name':'maqettaSamples','location':'../../../samples'},{'name':'maqetta','location':'../../maqetta'},{'name':'shapes','location':'../../shapes'},{'name':'zazl','location':'../../zazl'},{'name':'widgets','location':'../../custom'}],'themeMap':[['Android','',['themes/android/android.css']],['BlackBerry','',['themes/blackberry/blackberry.css']],['iPad','',['themes/ipad/ipad.css']],['iPhone','',['themes/iphone/iphone.css']],['.*','',['themes/iphone/iphone.css']]],'mblThemeFiles':[],'mblLoadCompatPattern':''"></script>
+<script type="text/javascript">
+require([
+  "dijit/dijit",
+  "dojo/parser",
+  "maqetta/space",
+  "maqetta/AppStates",
+  "dijit/form/TextBox",
+  "dijit/form/Textarea",
+  "dijit/MenuBar",
+  "dijit/PopupMenuBarItem",
+  "dijit/MenuItem",
+  "dijit/Menu",
+  "dijit/layout/BorderContainer",
+  "dijit/layout/ContentPane",
+  "dijit/layout/TabContainer",
+  "dijit/form/Button",
+  "dijit/TitlePane",
+  "dijit/layout/AccordionContainer"
+]);
+</script>
+<style>@import "themes/claro/document.css";@import "themes/claro/claro.css";@import "app.css";
+</style>
+<script type="text/javascript" src="app.js"></script>
+</head>
+<body data-maq-flow-layout="true" data-maq-comptype="desktop" class="claro" data-maq-ws="collapse" data-maq-appstates="{}" id="myapp">
+ <div id="main" style="width: 900px; position: absolute; z-index: 900; height: 100%; left: 100px; top: -1px;">
+   <div style="width: 900px; position: absolute; z-index: 900; height: 200px; left: 0px; top: 0px;">
+     <h1 style="position: relative; height: auto; width: auto; font-size: 32pt; text-align: left; top: 30px; left: 0px; font-family: Geneva,Tahoma,sans-serif;">
+       
+REAL-WORLD TYPE SYSTEM</h1>
+     <h3 style="width: auto; height: auto; position: relative; font-size: 20pt; top: 0px; font-family: Georgia,serif; font-style: normal;">
+       A tool to check programs against real-world constraints</h3>
+   </div>
+   <span data-dojo-type="dijit/layout/TabContainer" tabPosition="top" tabStrip="false" persist="false" controllerWidget="dijit.layout.TabController" style="min-width: 1em; min-height: 1em; width: 100%; position: relative; top: 200px; height: 100%;">
+   <div data-dojo-type="dijit/layout/ContentPane" title="HOME" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" closable="false" style="height: 100%;" doLayout="false">
+   <span data-dojo-type="dijit/TitlePane" title="INTERPRETATION" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" duration="200" open="true" style="min-width: 1em; width: 100%; height: auto;">
+   <p style="font-size: 10pt;">The concept of interpretation is</p>
+   </span>
+   <span data-dojo-type="dijit/TitlePane" title="INTERPRETED FORMALISM" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" duration="200" open="true" style="min-width: 1em; width: 100%; height: auto;">
+   <p style="font-size: 10pt;">Interpreted formalism</p>
+   </span>
+   <span data-dojo-type="dijit/TitlePane" title="REAL-WORLD TYPE SYSTEM" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" duration="200" open="false" style="min-width: 1em; width: 100%; height: auto;">
+      <p style="font-size: 10pt;">real-world type system is</p>
+   </span>
+   </div>
+   <div data-dojo-type="dijit/layout/ContentPane" title="MANUAL" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" closable="false" doLayout="false"></div>
+   <div data-dojo-type="dijit/layout/ContentPane" title="DOWNLOADS" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" selected="true" closable="false"></div>
+   <div data-dojo-type="dijit/layout/ContentPane" title="LIVE DEMOS" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false"></div>
+   <div data-dojo-type="dijit/layout/ContentPane" title="CASE STUDIES" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false"></div>
+   <div data-dojo-type="dijit/layout/ContentPane" title="CONTACT" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" closable="false"></div>
+   </span></div>
+</body>
+</html>
