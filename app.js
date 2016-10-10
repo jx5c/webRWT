@@ -40,5 +40,10 @@ function removeAltitudeDetails(input) {
 }
 
 function showProgramText(){
-	document.getElementById("programText").value = "This is line 1\nThis is line 2";
+//	document.getElementById("programText").value = "This is line 1\n\
+//	This is line 2";
+//console.debug(document.getElementById("programText").value);
+
+	var output = "public class Demo{ \n \x20 \x20 \x20 public float calculateDistance(float lat1, float lon1, float lat2, float lon2){ \n} \n}"
+	document.getElementById("programText").value =output;
 }
