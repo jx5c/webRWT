@@ -40,10 +40,48 @@ function removeAltitudeDetails(input) {
 }
 
 function showProgramText(){
-//	document.getElementById("programText").value = "This is line 1\n\
-//	This is line 2";
-//console.debug(document.getElementById("programText").value);
-
-	var output = "public class Demo{ \n \x20 \x20 \x20 public float calculateDistance(float lat1, float lon1, float lat2, float lon2){ \n} \n}"
+	var output = "public class Demo{ \n \x20public float calculateDistance(float lat1, float lon1, float lat2, float lon2){ \n \x20} \n}"
 	document.getElementById("programText").value =output;
+	var lineCount = 4;
+	var lineNumbers = "";
+	for(var i=0;i<lineCount;i++){
+         lineNumbers = lineNumbers + "" + (i+1);
+    }	
+	document.getElementById("programLineNumber").value = lineNumbers;	
 }
+
+function ShowSelection()
+{
+  var textComponent = document.getElementById('programText');
+  var selectedText;
+  // IE version
+  if (document.selection != undefined)
+  {
+    textComponent.focus();
+    var sel = document.selection.createRange();
+    selectedText = sel.text;
+  }
+  // Mozilla version
+  else if (textComponent.selectionStart != undefined)
+  {
+    var startPos = textComponent.selectionStart;
+    var endPos = textComponent.selectionEnd;
+    selectedText = textComponent.value.substring(startPos, endPos)
+  }
+  alert("You selected: " + selectedText);
+}
+
+function showTooltip() {
+var node = dom.byId('programText');
+  Tooltip.show("I am a tooltip", node);
+  on.once(node, mouse.leave, function(){
+      Tooltip.hide(node);
+  })
+}
+//
+//function hideTooltip() {
+//    var domNode = dijit.byId('programText').domNode;
+//    dijit.hideTooltip(domNode);
+//}
+
+

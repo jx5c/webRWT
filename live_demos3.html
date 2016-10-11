@@ -40,7 +40,9 @@ require([
   "dijit/form/TextBox",
   "dijit/form/NumberSpinner",
   "dijit/form/ComboButton",
-  "dijit/form/RadioButton"
+  "dijit/form/RadioButton",
+  "dojo/parser", 
+  "dijit/Tooltip"
 ]);
 </script>
 <script>
@@ -57,10 +59,20 @@ require(["dojo/dnd/Source", "dojo/parser", "dojo/domReady!", 'dojo/topic'], func
 });
 </script>
 
+<!--scrip--><!--ire(["dijit/Tooltip", "dojo/domReady!"], function(Tooltip--><!--reate a new Tooltip and connect it to bar1 and ba--><!--Tooltip--><!--ectId: ["programText"--><!--l: "value <b>74</b>--><!--tion:['above--><!--);--><!--);--><!--ript--><script>
+require(["dijit/Tooltip", "dojo/dom", "dojo/on", "dojo/mouse", "dojo/domReady!"], function(Tooltip, dom, on, mouse) {
+  var node = dom.byId('programText');
+  Tooltip.show("I am a tooltip", node);
+  on.once(node, mouse.leave, function(){
+      Tooltip.hide(node);
+  })
+})
+	</script>
+
 <style>@import "themes/claro/document.css";@import "themes/claro/claro.css";@import "app.css";
 </style>
 </head>
- <body data-maq-flow-layout="absolute" data-maq-comptype="sketchlofi" class="claro" data-maq-ws="collapse" id="myapp" data-maq-appstates="{}">
+ <body data-maq-flow-layout="absolute" data-maq-comptype="sketchlofi" class="claro" data-maq-ws="collapse" data-maq-appstates="{}" id="myapp">
        <div style="width: 900px; position: relative; height: 60px; left: 110px;">
   <h2>Select a programming language to use the demo</h2>
           <select data-dojo-type="dijit/form/Select" type="text" value="JAVA" intermediateChanges="false" iconClass="dijitNoIcon" emptyLabel="&amp;#160;" scrollOnFocus="true" autoWidth="true" style="left: 0px; position: relative; top: 0px; width: 150px; font-size: 12pt;">
@@ -98,7 +110,7 @@ require(["dojo/dnd/Source", "dojo/parser", "dojo/domReady!", 'dojo/topic'], func
                <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 12pt;">Real World Type List</b>
                </div>
                <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeRuleCreation" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity">
-               <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 10pt;">Real World Type Creation Template</b>
+               <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 10pt;">Real World Type Rule Creation</b>
                <input data-dojo-type="dojo/dnd/Target" id="operandOne" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/TextBox" data-dojo-type="dojo/dnd/Target" data-dojo-props="accept: [ 'rwtype' ]" style="position: absolute; z-index: 900; width: 128.109375px; left: 8px; top: 56px;">
                </input>
                <input data-dojo-type="dojo/dnd/Target" id="operandTwo" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/TextBox" style="position: absolute; z-index: 900; width: 132.109375px; left: 8px; top: 124px;" class="container">
@@ -108,16 +120,20 @@ require(["dojo/dnd/Source", "dojo/parser", "dojo/domReady!", 'dojo/topic'], func
 
              <input type="button" data-dojo-type="dijit/form/Button" onclick="showProgramText()" intermediateChanges="false" label="Create Rule" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 251.20617500000003px; top: 153px;">
  </input>
-             <select style="position: absolute; z-index: 900; left: 89px; top: 88.1875px;">
-               <option value="Operator *">
-                 Operator *</option>
-               <option value="Operator /">
-                 Operator /</option>
-               <option value="Operator +">
-                 Operator +</option>
-               <option value="Operator -">
-                 Operator -</option>
+             <select style="position: absolute; z-index: 900; left: 30.5546875px; top: 92px;">
+               <option value="times *">
+                 times *</option>
+               <option value="plus  +">
+                 plus  +</option>
+               <option value="minus -">
+                 minus -</option>
+               <option value="divided by /">
+                 divided by /</option>
              </select>
+             <label style="position: absolute; z-index: 900; left: 167px; top: 92px;">
+           =</label>
+             <input type="button" data-dojo-type="dijit/form/Button" intermediateChanges="false" label="show selection" onclick="ShowSelection()" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 118.00305000000003px; top: 152.98590000000002px;"></input>
+             <input type="button" data-dojo-type="dijit/form/Button" intermediateChanges="false" label="tooltip" onclick="showTooltip()" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 30.546875px; top: 152.97027500000002px;"></input>
            </div>
              </div>
            </div>
@@ -125,10 +141,15 @@ require(["dojo/dnd/Source", "dojo/parser", "dojo/domReady!", 'dojo/topic'], func
         </div>
          <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false" style="border: none; height: 40%;">
            <div style="height: 100%; width: 100%; position: relative; z-index: 900;">
-          <textarea data-dojo-type="dojo/dnd/Target" type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; height: 100%; background-color: #fff7f7; width: 13px; left: 0px; top: 0px;" readonly="true"></textarea>
-          <textarea data-dojo-type="dojo/dnd/Target" id="programText" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; top: 0px; height: 100%; background-color: white; width: 96%; left: -3px;"></textarea>
+          <textarea data-dojo-type="dojo/dnd/Target" id="programLineNumber" type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; height: 95%; background-color: #fff7f7; width: 13px; left: 0px; top: 0px;" readonly="true">
+          </textarea>
+          <textarea data-dojo-type="dojo/dnd/Target" id="programText" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; top: 0px; height: 95%; background-color: white; width: 96%; left: -3px;">
+
+          </textarea>
+           <div style="position: relative; z-index: 900; left: 0; top: 0; width: 100%; height: 5%;"><b>The selected program element is </b></div>
+         </div>
         </div>
-           </div>
+
        </div>
        <div id="pageCreation" style="height: 24px; width: 900px; position: absolute; z-index: 900; left: 110px; text-align: center;">
          Created by Jian Xiang in 2016</div>
