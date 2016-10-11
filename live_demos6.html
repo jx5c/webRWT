@@ -59,18 +59,6 @@ require(["dojo/dnd/Source", "dojo/parser", "dojo/domReady!", 'dojo/topic'], func
 });
 </script>
 
-<!--scrip--><!--ire(["dijit/Tooltip", "dojo/domReady!"], function(Tooltip--><!--reate a new Tooltip and connect it to bar1 and ba--><!--Tooltip--><!--ectId: ["programText"--><!--l: "value <b>74</b>--><!--tion:['above--><!--);--><!--);--><!--ript--><script>
-require(["dijit/Tooltip", "dojo/dom", "dojo/on", "dojo/mouse", "dojo/domReady!"], function(Tooltip, dom, on, mouse) {
-  var node = dom.byId('programText');
-  //var domNode = dijit.byId('programText').domNode;
-  console.debug(dijit.byId('programText'));
-  Tooltip.show("I am a tooltip", node, ['above']);
-  on.once(node, mouse.leave, function(){
-      Tooltip.hide(node);
-  })
-})
-	</script>
-
 <style>@import "themes/claro/document.css";@import "themes/claro/claro.css";@import "app.css";
 </style>
 </head>
@@ -90,7 +78,7 @@ require(["dijit/Tooltip", "dojo/dom", "dojo/on", "dojo/mouse", "dojo/domReady!"]
        </div>
        <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; position: relative; width: 900px; left: 100px; height: 800px;">
        <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="bottom" splitter="true" maxSize="Infinity" doLayout="false" style="border: none; border-radius: 0px; -moz-border-radius: 0px; margin: 0px; padding: 0; height: 422px;">
-          <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; position: absolute; z-index: 900; top: 0px; width: 100%; height: 100%; left: 0;">
+          <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; top: 0px; width: 100%; height: 100%; left: 0; position: relative;">
             <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="left" splitter="true" maxSize="Infinity" doLayout="false" style="width:435px;">
              <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; width: 100%; height: 100%; position: relative; left: 0px; top: 0;">
                <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeList" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" region="top" splitter="true" maxSize="Infinity" style="height: 176px;">
@@ -141,15 +129,22 @@ require(["dijit/Tooltip", "dojo/dom", "dojo/on", "dojo/mouse", "dojo/domReady!"]
            </div>
           </div>
         </div>
-         <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false" style="border: none; height: 40%;">
+         <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false" style="border: none; height: 45%;">
            <div style="height: 100%; width: 100%; position: relative; z-index: 900;">
-          <textarea data-dojo-type="dojo/dnd/Target" id="programLineNumber" type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; background-color: #fff7f7; width: 13px; left: 0px; top: 0px; height: 100%;" readonly="true">
+          <textarea data-dojo-type="dojo/dnd/Target" id="programLineNumber" type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; background-color: #fff7f7; width: 13px; left: 0px; top: 0px; height: 85%;" readonly="true">
           </textarea>
-          <textarea data-dojo-type="dojo/dnd/Target" id="programText" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; top: 0px; background-color: white; width: 96%; left: -3px; height: 100%;">
-
+          <textarea data-dojo-type="dojo/dnd/Target" id="programText" onclick="changeSelection()" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; top: 0px; background-color: white; width: 96%; left: -3px; height: 85%;">
           </textarea>
-
-         </div>
+          <div style="position: relative; width: 100%; left: 0px; top: 5px; height: 15%;">
+   <div>
+   <b>The selected program element is: </b>
+   <input id="selectedElement" type="text" data-dojo-type="dijit/form/TextBox"></input>
+   </div>
+   <div style="position: relative; width: 100%; left: 0px; top: 10px;"><b> The corresponding real-world type for the selection is </b>
+   <input type="text" data-dojo-type="dijit/form/TextBox"></input>
+   </div>
+   </div>
+        </div>
         </div>
 
        </div>

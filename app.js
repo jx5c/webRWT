@@ -78,10 +78,26 @@ var node = dom.byId('programText');
       Tooltip.hide(node);
   })
 }
-//
-//function hideTooltip() {
-//    var domNode = dijit.byId('programText').domNode;
-//    dijit.hideTooltip(domNode);
-//}
+
+function changeSelection()
+{
+  var textComponent = document.getElementById('programText');
+  var selectedText;
+  // IE version
+  if (document.selection != undefined)
+  {
+    textComponent.focus();
+    var sel = document.selection.createRange();
+    selectedText = sel.text;
+  }
+  // Mozilla version
+  else if (textComponent.selectionStart != undefined)
+  {
+    var startPos = textComponent.selectionStart;
+    var endPos = textComponent.selectionEnd;
+    selectedText = textComponent.value.substring(startPos, endPos)
+  }
+  	document.getElementById("selectedElement").value = selectedText;	
+}
 
 
