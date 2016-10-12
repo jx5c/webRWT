@@ -63,7 +63,7 @@ require(["dojo/dnd/Source", "dojo/parser", "dojo/domReady!", 'dojo/topic'], func
 </style>
 </head>
  <body data-maq-flow-layout="absolute" data-maq-comptype="sketchlofi" class="claro" data-maq-ws="collapse" data-maq-appstates="{}" id="myapp">
-       <div style="width: 900px; position: relative; height: 60px; left: 110px;">
+       <div style="position: relative; height: 60px; width: 1150px; left: 60px;">
   <h2>Select a programming language to use the demo</h2>
           <select data-dojo-type="dijit/form/Select" type="text" value="JAVA" intermediateChanges="false" iconClass="dijitNoIcon" emptyLabel="&amp;#160;" scrollOnFocus="true" autoWidth="true" style="left: 0px; position: relative; top: 0px; width: 150px; font-size: 12pt;">
            <option value="Java" selected="true">
@@ -76,80 +76,84 @@ require(["dojo/dnd/Source", "dojo/parser", "dojo/domReady!", 'dojo/topic'], func
              JAVAScript</option>
          </select>
        </div>
-       <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; position: relative; width: 900px; left: 100px; height: 800px;">
+       <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; position: relative; height: 800px; left: 50px; width: 1150px;">
        <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="bottom" splitter="true" maxSize="Infinity" doLayout="false" style="border: none; border-radius: 0px; -moz-border-radius: 0px; margin: 0px; padding: 0; height: 422px;">
-          <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; top: 0px; width: 100%; height: 100%; left: 0; position: relative;">
-            <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="left" splitter="true" maxSize="Infinity" doLayout="false" style="width:435px;">
-             <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; width: 100%; height: 100%; position: relative; left: 0px; top: 0;">
-               <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeList" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" region="top" splitter="true" maxSize="Infinity" style="height: 176px;">
+        <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; width: 100%; height: 100%; position: relative; left: 0px; top: 0;">
+          <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="left" splitter="true" maxSize="Infinity" doLayout="false" style="width: 243px;">
+           <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; width: 100%; height: 100%; position: relative; left: 0px; top: 0;">
+             <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeList" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" region="top" splitter="true" maxSize="Infinity" style="height:170px;">
                <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 12pt;">Real World Types</b>
-                   <ol data-dojo-type="dojo.dnd.Source" id="real_world_type_list" data-dojo-props="copyOnly:true,selfCopy:true" class="container" style="position: relative; left: 0px; width: auto; height: auto;">
-                     <li class="dojoDndItem" dndType="rwtype">Altitude</li>
-                     <li class="dojoDndItem" dndType="rwtype">Longitude</li>
-                     <li class="dojoDndItem" dndType="rwtype">Latitude</li>
-                   </ol>
-               </div>
-               <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeDetail" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" region="center" splitter="false" maxSize="Infinity">
-               <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 10pt;">Real World Type Detail</b>
-               </div>
+               <ol data-dojo-type="dojo.dnd.Source" id="real_world_type_list" data-dojo-props="copyOnly:true,selfCopy:true" class="container" style="position: relative; left: 0px; width: auto; height: auto;">
+                 <li class="dojoDndItem" dndType="rwtype">Altitude</li>
+                 <li class="dojoDndItem" dndType="rwtype">Longitude</li>
+                 <li class="dojoDndItem" dndType="rwtype">Latitude</li>
+               </ol>
+             </div>
+             <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeDetail" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" doLayout="true" region="center" splitter="false" maxSize="Infinity">
+               <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 10pt;">Real World Type Details</b>
              </div>
            </div>
-            <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false">
-             <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; width: 100%; height: 100%; position: relative; left: 0px; top: 0;">
-               <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeRule" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="top" splitter="true" maxSize="Infinity" style="height: 173px;">
-               <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 12pt;">Real World Type List</b>
-               </div>
-               <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeRuleCreation" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity">
-               <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 10pt;">Real World Type Rule Creation</b>
-               <input data-dojo-type="dojo/dnd/Target" id="operandOne" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/TextBox" data-dojo-type="dojo/dnd/Target" data-dojo-props="accept: [ 'rwtype' ]" style="position: absolute; z-index: 900; width: 128.109375px; left: 8px; top: 56px;">
-               </input>
-               <input data-dojo-type="dojo/dnd/Target" id="operandTwo" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/TextBox" style="position: absolute; z-index: 900; width: 132.109375px; left: 8px; top: 124px;" class="container">
-               </input>
-               <input data-dojo-type="dojo/dnd/Target" id="operationResult" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/TextBox" style="position: absolute; z-index: 900; width: 128.109375px; left: 207px; top: 88.20159999999998px;">
-           </input>
+         </div>
+          <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="right" splitter="true" maxSize="Infinity" doLayout="false" style="width:345px;">
+           <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; width: 100%; height: 100%; position: relative; left: 0px; top: 0;">
+             <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="top" splitter="true" maxSize="Infinity" doLayout="false" style="height:172px;">
+             <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 12pt;">Real World Type Bindings</b></div>
+             <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false">
+             <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 10pt;">Real World Type Binding Creation</b>
 
-             <input type="button" data-dojo-type="dijit/form/Button" onclick="showProgramText()" intermediateChanges="false" label="Create Rule" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 251.20617500000003px; top: 153px;">
- </input>
-             <select style="position: absolute; z-index: 900; left: 30.5546875px; top: 92px;">
-               <option value="times *">
-                 times *</option>
-               <option value="plus  +">
-                 plus  +</option>
-               <option value="minus -">
-                 minus -</option>
-               <option value="divided by /">
-                 divided by /</option>
-             </select>
-             <label style="position: absolute; z-index: 900; left: 167px; top: 92px;">
-           =</label>
-             <input type="button" data-dojo-type="dijit/form/Button" intermediateChanges="false" label="show selection" onclick="ShowSelection()" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 118.00305000000003px; top: 152.98590000000002px;"></input>
-             <input type="button" data-dojo-type="dijit/form/Button" intermediateChanges="false" label="tooltip" onclick="showTooltip()" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 30.546875px; top: 152.97027500000002px;"></input>
+                <div style="position: relative; width: 100%; left: 0px; top: 10px;">
+      <span>The selected program element is: </span>
+      <input id="selectedElement" type="text" data-dojo-type="dijit/form/TextBox"></input>
+      </div>
+      <div style="position: relative; width: 100%; left: 0px; top: 20px;">
+    <span> The corresponding real-world type for the selection is </span>
+      <input type="text" data-dojo-type="dijit/form/TextBox"></input>
+      </div>
+      <input type="button" data-dojo-type="dijit/form/Button" intermediateChanges="false" label="Create Binding" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 202.00305000000003px; top: 132px;"></input>
+    </div>
            </div>
+         </div>
+          <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false">
+           <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; position: relative; left: 0px; top: 0px; width: 100%; height: 100%;">
+             <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeRule" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="top" splitter="true" maxSize="Infinity" style="height:169px;">
+               <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 12pt;">Real World Type Rule List</b>
              </div>
+             <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeRuleCreation" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity">
+               <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 10pt;">Real World Type Rule Creation</b>
+               <input data-dojo-type="dojo/dnd/Target" id="operandOne" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/TextBox" data-dojo-type="dojo/dnd/Target" data-dojo-props="accept: [ 'rwtype' ]" style="position: absolute; z-index: 900; width: 128.109375px; left: 8px; top: 61px;">
+               </input>
+               <input data-dojo-type="dojo/dnd/Target" id="operandTwo" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/TextBox" style="position: absolute; z-index: 900; width: 132.109375px; left: 6px; top: 99px;" class="container">
+               </input>
+               <input data-dojo-type="dojo/dnd/Target" id="operationResult" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/TextBox" style="position: absolute; z-index: 900; width: 128.109375px; left: 283px; top: 74px;">
+           </input>
+               <input type="button" data-dojo-type="dijit/form/Button" onclick="showProgramText()" intermediateChanges="false" label="Create Rule" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 327.20617500000003px; top: 123px;">
+ </input>
+               <select style="position: absolute; z-index: 900; left: 155.265625px; top: 74px;">
+                 <option value="times *">times *</option>
+                 <option value="plus  +">plus  +</option>
+                 <option value="minus -">minus -</option>
+                 <option value="divided by /">divided by /</option>
+               </select>
+               <label style="position: absolute; z-index: 900; left: 257px; top: 77px;">=</label>
+               <span style="position: absolute; z-index: 900; left: 45px; top: 38px;">Operands</span><span style="position: absolute; z-index: 900; left: 173.359375px; top: 38px;">Operator</span><span style="position: absolute; z-index: 900; left: 323.6484375px; top: 38px;">Result</span></div>
            </div>
-          </div>
+         </div>
         </div>
+      </div>
          <div data-dojo-type="dijit/layout/ContentPane" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity" doLayout="false" style="border: none; height: 45%;">
            <div style="height: 100%; width: 100%; position: relative; z-index: 900;">
-          <textarea data-dojo-type="dojo/dnd/Target" id="programLineNumber" type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; background-color: #fff7f7; width: 13px; left: 0px; top: 0px; height: 85%;" readonly="true">
+        <textarea data-dojo-type="dojo/dnd/Target" id="programLineNumber" type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; background-color: #fff7f7; width: 13px; left: 0px; top: 0px; height: 100%;" readonly="true">
           </textarea>
-          <textarea data-dojo-type="dojo/dnd/Target" id="programText" onclick="changeSelection()" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; top: 0px; background-color: white; width: 96%; left: -3px; height: 85%;">
-          </textarea>
-          <div style="position: relative; width: 100%; left: 0px; top: 5px; height: 15%;">
-   <div>
-   <b>The selected program element is: </b>
-   <input id="selectedElement" type="text" data-dojo-type="dijit/form/TextBox"></input>
-   </div>
-   <div style="position: relative; width: 100%; left: 0px; top: 10px;"><b> The corresponding real-world type for the selection is </b>
-   <input type="text" data-dojo-type="dijit/form/TextBox"></input>
-   </div>
-   </div>
+          <textarea data-dojo-type="dojo/dnd/Target" id="programText" onclick="changeSelection()" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; top: 0px; background-color: white; left: -3px; height: 100%; width: 66%;">
+      </textarea>
+        <span data-dojo-type="dojo/dnd/Target" id="mainDescription" type="text" data-dojo-type="dijit/form/SimpleTextarea" rows="10" cols="10" style="position: relative; background-color: #fff7f7; width: 30%; left: 0px; top: 0px; height: 100%;" readonly="true">
+        This is the 6description for the web tool
+          </span>
         </div>
         </div>
 
        </div>
        <div id="pageCreation" style="height: 24px; width: 900px; position: absolute; z-index: 900; left: 110px; text-align: center;">
          Created by Jian Xiang in 2016</div>
-
- </body>
+       </body>
 </html>
