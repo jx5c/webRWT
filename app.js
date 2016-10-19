@@ -4,6 +4,7 @@
  */
 
 
+
 function SetPage(pg){
 	alert(pg);
 }

@@ -48,6 +48,7 @@ require([
 </script>
 <script>
 require(["dojo/dnd/Source", "dojo/parser", "dojo/domReady!", 'dojo/topic'], function(Source) {
+	    showProgramText();
 		var operandOneNode = new Source("operandOne");
         operandOneNode.on("DndDrop", function(source, nodes, copy, target) {
         	if(target.node.id == "operandOne" || target.node.id == "operandTwo"  || target.node.id == "operationResult"  ){
