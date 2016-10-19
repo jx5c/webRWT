@@ -1,9 +1,6 @@
-/*
-	FWT BizSlide by Adonis Ronquillo for Free Web Templates
-	www.freewebtemplates.com / www.doni.us
-	Images by Fotogrph http://fotogrph.com
-	Released under the Creative Commons Attribution 3.0 License.
-*/
+
+#tab { display:inline-block; 
+       margin-left: 20px; }
 
 * {
 	margin: 0;

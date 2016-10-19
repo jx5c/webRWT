@@ -101,4 +101,17 @@ function changeSelection()
   	document.getElementById("selectedElement").value = selectedText;	
 }
 
+function addRuleToList(){
+    var list = document.getElementById('rwtRuleList');
+	var opOne = document.getElementById('operandOne').value;
+	var opTwo = document.getElementById('operandTwo').value;
+	var opResult = document.getElementById('operationResult').value;
+	var op = document.getElementById('operation').value;
+	var contents = opOne + " " + op + " " + opTwo + " = " + opResult;
+    //document.getElementById('boldStuff2').innerHTML = firstname;
+    var entry = document.createElement('li');
+    entry.appendChild(document.createTextNode(contents));
+    list.appendChild(entry);
+}
+
 

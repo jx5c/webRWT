@@ -120,10 +120,7 @@ require(["dojo/dnd/Source", "dojo/parser", "dojo/domReady!", 'dojo/topic'], func
                <div data-dojo-type="dijit/layout/BorderContainer" design="sidebar" persist="false" gutters="true" style="min-width: 1em; min-height: 1px; position: relative; left: 0px; top: 0px; width: 100%; height: 100%;">
                  <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeRule" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="top" splitter="true" maxSize="Infinity" style="height:126px;">
                    <b style="font-family: 'Helvetica,Trebuchet MS',sans-serif; font-size: 12pt;">Real World Type Rule List</b>
-                   <ul style="list-style: none;">
-                     <li>asldjflkasjdlfjkas;dfjlasdjf;lasjdf;lajsd;lfjasl;djf;lasjdkfl;k123123123sdfasdf</li>
-                     <li>item2</li>
-                     <li>item3</li>
+                   <ul id="rwtRuleList" style="list-style: none;">
                     </ul>
                  </div>
                  <div data-dojo-type="dijit/layout/ContentPane" id="rwtypeRuleCreation" extractContent="false" preventCache="false" preload="false" refreshOnShow="false" region="center" splitter="false" maxSize="Infinity">
@@ -134,7 +131,7 @@ require(["dojo/dnd/Source", "dojo/parser", "dojo/domReady!", 'dojo/topic'], func
                </input>
                    <input data-dojo-type="dojo/dnd/Target" id="operationResult" data-dojo-props="accept: [ 'rwtype' ]" type="text" data-dojo-type="dijit/form/TextBox" style="position: absolute; z-index: 900; width: 128.109375px; left: 245.8828125px; top: 80.5px;">
            </input>
-                   <input type="button" data-dojo-type="dijit/form/Button" onclick="showProgramText()" intermediateChanges="false" label="Create Rule" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 268px; top: 109.015625px;">
+                   <input type="button" data-dojo-type="dijit/form/Button" onclick="addRuleToList()" intermediateChanges="false" label="Create Rule" iconClass="dijitNoIcon" style="position: absolute; z-index: 900; left: 268px; top: 109.015625px;">
  </input>
                    <select style="position: absolute; z-index: 900; left: 114.6171875px; top: 77px;">
                      <option value="times *">
